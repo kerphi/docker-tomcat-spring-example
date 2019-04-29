@@ -13,4 +13,5 @@ before_install:
 
 before_script:
   - # build our image app
-  - docker-compose -f docker-compose.build.yml
+  - docker-compose -f docker-compose.build.yml build
+  
