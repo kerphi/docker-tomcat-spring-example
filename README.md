@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/kerphi/docker-tomcat-spring-example.svg?branch=master)](https://travis-ci.org/kerphi/docker-tomcat-spring-example)
 
-Ce dépôt est un exemple de dockerisation d'une application sprint-boot compilée dans un war via [l'image docker officielle maven](https://hub.docker.com/_/maven) puis déployée et exécutée dans un [tomcat via son image docker officielle](https://hub.docker.com/_/tomcat).
+Ce dépôt est un exemple de dockerisation d'une application spring-boot compilée dans un war via [l'image docker officielle maven](https://hub.docker.com/_/maven) puis déployée et exécutée dans un [tomcat via son image docker officielle](https://hub.docker.com/_/tomcat).
 
 La fonctionnalité [multistage-build de docker](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) est ici utilisée pour pouvoir compiler le WAR dans un premier conteneur docker indépendant puis de le déployer (sans son environnement de build) dans un autre conteneur qui est lui uniquement chargé d'exécuter un tomcat.
 
