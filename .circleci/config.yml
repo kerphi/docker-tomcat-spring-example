@@ -29,5 +29,4 @@ jobs:
       - run:
           name: Test the app -> try to connect to the app throug HTTP 8080 port
           command: |
-            test $(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8080/) = 200
-
+            test $(docker run --network container:docker-tomcat-spring-example appropriate/curl --retry 10 --retry-delay 1 --retry-connrefused -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8080/) = 200
