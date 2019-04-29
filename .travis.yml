@@ -11,7 +11,17 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-before_script:
+install:
   - # build our image app
   - docker-compose -f docker-compose.build.yml build
-  
+
+before_script:
+  - # run the app in the background
+  - docker-compose -f ./docker-compose.yml up -d
+  - sleep 10 ; docker-compose logs
+
+script:
+  - # count number of running containers
+  - docker-compose ps
+  - NB_CONTAINERS=$(docker-compose ps | grep " Up " | wc -l)
+  - test $NB_CONTAINERS = 1
