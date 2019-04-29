@@ -4,5 +4,11 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
+      - run:
+          name: Install Docker Compose
+          command: |
+            curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+            chmod +x ~/docker-compose
+            sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - checkout
       - run: echo "A first hello"
