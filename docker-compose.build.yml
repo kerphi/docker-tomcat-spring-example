@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+
+  docker-tomcat-spring-example:
+    container_name: docker-tomcat-spring-example
+    image: docker-tomcat-spring-example:1.0.0
+    build:
+      context: .

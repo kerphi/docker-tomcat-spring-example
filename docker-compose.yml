@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  docker-tomcat-spring-example:
+    container_name: docker-tomcat-spring-example
+    image: docker-tomcat-spring-example:1.0.0
+    tty: true         # to have nice debug(...) outputs
+    stdin_open: true  # to be able to use CTRL+C to stop the debug
+    ports:
+      - 8080:8080
