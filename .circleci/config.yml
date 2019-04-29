@@ -15,3 +15,19 @@ jobs:
       - run:
           name: Build the app in a docker image
           command: docker-compose -f docker-compose.build.yml build
+      - run:
+          name: Execute the app in a docker container
+          command: |
+            docker-compose -f ./docker-compose.yml up -d
+            sleep 10 ; docker-compose logs
+      - run:
+          name: Count number of running containers
+          command: |
+            docker-compose ps
+            NB_CONTAINERS=$(docker-compose ps | grep " Up " | wc -l)
+            test $NB_CONTAINERS = 1
+      - run:
+          name: Test the app -> try to connect to the app throug HTTP 8080 port
+          command: |
+            test $(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8080/) = 200
+
