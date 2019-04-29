@@ -10,5 +10,8 @@ jobs:
             curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
+      - setup_remote_docker      
       - checkout
-      - run: echo "A first hello"
+      - run:
+          name: Build the app in a docker image
+          command: docker-compose -f docker-compose.build.yml build
