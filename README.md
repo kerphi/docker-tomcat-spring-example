@@ -6,7 +6,7 @@ Ce dépôt est un exemple de dockerisation d'une application sprint-boot compil�
 
 La fonctionnalité [multistage-build de docker](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) est ici utilisée pour pouvoir compiler le WAR dans un premier conteneur docker indépendant puis de le déployer (sans son environnement de build) dans un autre conteneur qui est lui uniquement chargé d'exécuter un tomcat.
 
-# Construire l'application
+## Construire l'application
 
 ```shell
 docker-compose -f docker-compose.build.yml build
@@ -14,7 +14,7 @@ docker-compose -f docker-compose.build.yml build
 
 L'image docker `docker-tomcat-spring-example:1.0.0` sera alors construite localement. A noter que si les source Java de l'application (répertoire `src/`) sont modifiées, les dépendances maven ne seront pas retéléchagées (ce qui prend du temps) car elles ont été mise en cache par le système multistage-build de docker. Le dépendances seront retéléchargées uniquement si `pom.xml` est modifié.
 
-# Exécuter l'application
+## Exécuter l'application
 
 ```shell
 docker-compose up
