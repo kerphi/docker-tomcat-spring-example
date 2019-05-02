@@ -26,3 +26,11 @@ docker-compose up
 Le conteneur docker nommé `docker-tomcat-spring-example` est alors créé à partir de l'image docker`docker-tomcat-spring-example:1.0.0` préalablement construite. Le WAR est alors automatiquement déployé et executé par tomcat à sa racine. L'application spring-boot est alors accessible dans le serveur web de tomcat qui est à l'écoute sur le port local 8080 : http://localhost:8080/
 
 Pour stopper l'application utiliser `CTRL+C`
+
+### Debugguer l'application
+
+```shell
+docker-compose -f docker-compose.debug.yml up
+```
+
+Ensuite connectez un debuggueur JPDA sur 127.0.0.1:8000
