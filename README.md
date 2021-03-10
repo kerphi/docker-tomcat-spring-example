@@ -1,6 +1,6 @@
 # docker-tomcat-spring-example
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/kerphi/docker-tomcat-spring-example.svg)](https://registry.hub.docker.com/u/kerphi/docker-tomcat-spring-example/) [![Build Status](https://travis-ci.org/kerphi/docker-tomcat-spring-example.svg?branch=master)](https://travis-ci.org/kerphi/docker-tomcat-spring-example) [![CircleCI](https://circleci.com/gh/kerphi/docker-tomcat-spring-example.svg?style=svg)](https://circleci.com/gh/kerphi/docker-tomcat-spring-example)
+[![Docker Pulls](https://img.shields.io/docker/pulls/kerphi/docker-tomcat-spring-example.svg)](https://registry.hub.docker.com/r/kerphi/docker-tomcat-spring-example) [![Build Status](https://travis-ci.org/kerphi/docker-tomcat-spring-example.svg?branch=master)](https://travis-ci.org/kerphi/docker-tomcat-spring-example) [![CircleCI](https://circleci.com/gh/kerphi/docker-tomcat-spring-example.svg?style=svg)](https://circleci.com/gh/kerphi/docker-tomcat-spring-example)
 
 Ce dépôt est un exemple de dockerisation d'une application spring-boot compilée dans un war via [l'image docker officielle maven](https://hub.docker.com/_/maven) puis déployée et exécutée dans un [tomcat via son image docker officielle](https://hub.docker.com/_/tomcat).
 
